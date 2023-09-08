@@ -26,7 +26,7 @@ function Navbar() {
           sx={{ backgroundColor: "#0066A1" }}
         >
           <Grid container alignItems="center">
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={6}>
               <Toolbar>
                 <Stack direction="row" spacing={1}>
                   <Button color="inherit" sx={{ fontSize: "15px" }}>
@@ -44,12 +44,15 @@ function Navbar() {
                 </Stack>
               </Toolbar>
             </Grid>
-            <Grid item xs={6} sx={{ textAlign: "right" }}>
+            <Grid item xs={12} sm={6} sx={{ textAlign: "right" }}>
               <a target="_blank" rel="noopener noreferrer">
                 <InstagramIcon fontSize="large" sx={{ padding: "4px" }} />
               </a>
               <a target="_blank" rel="noopener noreferrer">
                 <LinkedInIcon fontSize="large" sx={{ padding: "4px" }} />
+              </a>
+              <a target="_blank" rel="noopener noreferrer">
+                <GitHubIcon fontSize="large" sx={{ padding: "4px" }} />
               </a>
               <a target="_blank" rel="noopener noreferrer">
                 <TwitterIcon fontSize="large" sx={{ padding: "4px" }} />
