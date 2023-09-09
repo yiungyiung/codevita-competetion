@@ -5,6 +5,7 @@ import About from "./components/about";
 import Program from "./components/virtualIntern";
 import Footer from "./components/footer";
 import IpProgram from "./components/internshipProg";
+import CustomizedSwitches from "./components/CustomizedSwitches";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Cover />
       <About />
       <Program />
+      <CustomizedSwitches />
       <IpProgram />
       <Footer />
     </div>
