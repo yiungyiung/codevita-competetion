@@ -1,6 +1,6 @@
 import * as React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
-import programImage from "../images/work.png";
+import programImage from "../images/Group.png";
 const block = {
   backgroundColor: "#111829",
 };
@@ -35,24 +35,26 @@ const listItemStyle = {
   marginLeft: "20px",
 };
 
-function Program() {
+function IpProgram() {
   return (
     <div>
       <h1
         className="text-4xl font-bold font-mono text-blue-600 underline"
         style={titleStyle}
       >
-        Virtual Internship Program
+        Internship Cum Training Program
       </h1>
       <br></br>
       <br></br>
       <br></br>
       <p className="text-1xl font-mono text-white py-2" style={paragraphStyle}>
-        Get ready to take your profile to the next level with thrilling hands-on
-        projects! Upon finishing the program, you'll receive a prestigious
-        internship certificate, invaluable work experience, and personalized
-        mentoring. Choose from a variety of domains and supercharge your resume
-        to stand out from the crowd!
+        Apply now for Codevita Live’s Data Science FastTrack programme before
+        the cohort gets full. Take advantage of a 10-week curriculum that covers
+        everything that you need to know to kickstart your dream career, from
+        scratch and at your own pace. The internship function would be activated
+        once sufficient progress has been achieved in the course and will be
+        based on the following functions: EDA, Supervised/Unsupervised Machine
+        Learning, Sentimental Analysis
         <br />
         <br />
       </p>
@@ -60,19 +62,22 @@ function Program() {
         <div style={containerStyle}>
           <ListGroup>
             <ListGroup.Item style={listItemStyle}>
-              &bull; Web Development
+              &bull; Weekly Checkpoint Exams
             </ListGroup.Item>
             <ListGroup.Item style={listItemStyle}>
-              &bull; Product Management
+              &bull; Capstone Project Intensive
             </ListGroup.Item>
             <ListGroup.Item style={listItemStyle}>
-              &bull; Data Science
+              &bull; 24/7 Doubt Support
             </ListGroup.Item>
             <ListGroup.Item style={listItemStyle}>
-              &bull; Computer Vision
+              &bull; Premium Career Services
             </ListGroup.Item>
             <ListGroup.Item style={listItemStyle}>
-              &bull; Web Development
+              &bull; Lifetime Access
+            </ListGroup.Item>
+            <ListGroup.Item style={listItemStyle}>
+              &bull; Guaranteed Internship
             </ListGroup.Item>
           </ListGroup>
           <img src={programImage} alt="Program" style={imageStyle} />
@@ -88,4 +93,4 @@ function Program() {
   );
 }
 
-export default Program;
+export default IpProgram;
