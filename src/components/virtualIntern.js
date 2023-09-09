@@ -142,7 +142,111 @@ function Program() {
             borderRadius: "2rem",
           }}
         >
-          <Grid item sx={{ margin: "1rem" }}>
+          <Grid
+            item
+            sx={{ display: "flex", alignItems: "center", margin: "1rem" }}
+          >
+            <h2>Name:</h2>
+            <Box
+              component="form"
+              sx={{
+                "& > :not(style)": { m: 1, width: "25ch" },
+              }}
+              noValidate
+              autoComplete="off"
+            >
+              <TextField
+                id="outlined-basic"
+                label="Outlined"
+                variant="outlined"
+              />
+            </Box>
+          </Grid>
+          <Grid
+            item
+            sx={{ display: "flex", alignItems: "center", margin: "1rem" }}
+          >
+            <h2>Degree:</h2>
+            <Box
+              component="form"
+              sx={{
+                "& > :not(style)": { m: 1, width: "25ch" },
+              }}
+              noValidate
+              autoComplete="off"
+            >
+              <TextField
+                id="outlined-basic"
+                label="Outlined"
+                variant="outlined"
+              />
+            </Box>
+          </Grid>
+          <Grid
+            item
+            sx={{ display: "flex", alignItems: "center", margin: "1rem" }}
+          >
+            <h2>College:</h2>
+            <Box
+              component="form"
+              sx={{
+                "& > :not(style)": { m: 1, width: "25ch" },
+              }}
+              noValidate
+              autoComplete="off"
+            >
+              <TextField
+                id="outlined-basic"
+                label="Outlined"
+                variant="outlined"
+              />
+            </Box>
+          </Grid>
+          <Grid
+            item
+            sx={{ display: "flex", alignItems: "center", margin: "1rem" }}
+          >
+            <h2>Current Semester:</h2>
+            <Box
+              component="form"
+              sx={{
+                "& > :not(style)": { m: 1, width: "25ch" },
+              }}
+              noValidate
+              autoComplete="off"
+            >
+              <TextField
+                id="outlined-basic"
+                label="Outlined"
+                variant="outlined"
+              />
+            </Box>
+          </Grid>
+          <Grid
+            item
+            sx={{ display: "flex", alignItems: "center", margin: "1rem" }}
+          >
+            <h2>Track:</h2>
+            <Box
+              component="form"
+              sx={{
+                "& > :not(style)": { m: 1, width: "25ch" },
+              }}
+              noValidate
+              autoComplete="off"
+            >
+              <TextField
+                id="outlined-basic"
+                label="Outlined"
+                variant="outlined"
+              />
+            </Box>
+          </Grid>
+          <Grid
+            item
+            sx={{ display: "flex", alignItems: "center", margin: "1rem" }}
+          >
+            <h2>Verification Code:</h2>
             <Box
               component="form"
               sx={{
