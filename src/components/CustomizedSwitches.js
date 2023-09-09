@@ -5,8 +5,8 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
-  width: 330,
-  height: 73,
+  width: 500,
+  height: 140,
   padding: 7,
   border: "1px solid white",
   borderRadius: 30,
@@ -16,7 +16,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     padding: 0,
     transform: "translateX(0px)",
     "&.Mui-checked": {
-      transform: "translateX(178px)",
+      transform: "translateX(120%)", 
       "& .MuiSwitch-thumb:before": {
         content: '"Cybersecurity Evangelist Live"',
         position: "absolute",
@@ -27,9 +27,9 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
         height: "100%",
         left: 0,
         top: 0,
-        fontSize: "18px",
+        fontSize: "25px",
         background: "transparent",
-        textAlign: "center", // Center-align text
+        textAlign: "center",
       },
       "& + .MuiSwitch-track": {
         opacity: 1,
@@ -40,8 +40,8 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   },
   "& .MuiSwitch-thumb": {
     backgroundColor: theme.palette.mode === "dark" ? "#0066a1" : "#0066a1",
-    width: 150,
-    height: 70,
+    width: 225,
+    height: 136,
     borderRadius: 10,
     "&:before": {
       content: '"Data Science FastTrack"',
@@ -54,9 +54,9 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
       left: 0,
       top: 0,
       color: "#fff",
-      fontSize: "18px",
+      fontSize: "25px",
       background: "transparent",
-      textAlign: "center", // Center-align text
+      textAlign: "center",
     },
   },
   "& .MuiSwitch-track": {
