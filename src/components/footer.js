@@ -6,8 +6,13 @@ import EmailIcon from "@mui/icons-material/Email";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import footerimage from "../images/web-development 1.png";
 
 const Footer = () => {
+  const overlayImageStyle = {
+    float: 'right',width: '400px',height: 'auto'
+  };
+
   return (
     <footer>
       <div style={{ backgroundColor: "#0066A1" }}>
@@ -24,6 +29,10 @@ const Footer = () => {
           }}
         >
           <Divider variant="middle" sx={{ backgroundColor: "white" }} />
+          {/* Add the <img> element here */}
+          <div>
+            <img src={footerimage} alt="Overlay Image" style={overlayImageStyle} />
+          </div>
           <div>
             <h2>Get In Touch</h2>
             <a
