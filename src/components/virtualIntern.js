@@ -3,8 +3,8 @@ import ListGroup from "react-bootstrap/ListGroup";
 import programImage from "../images/work.png";
 import { Typography, Grid } from "@mui/material";
 import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-//import {db} from "./firebase";
+import Input from "@mui/material/Input";
+import { db } from "./firebase";
 
 const block = {
   backgroundColor: "#111829",
@@ -47,6 +47,31 @@ function Program() {
   const [CurrSem, setCurrSem] = useState("");
   const [Track, setTrack] = useState("");
   const [VeriCode, setVeriCode] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(Name,Deg,CurrSem,Track,VeriCode,College);
+    db.collection("But")
+    .add({
+      Name: Name,
+      Degree: Deg,
+      College: College,
+      CurrentSem: CurrSem,
+      Track: Track,
+      Verificationcode: VeriCode,
+    })
+    .then(() => {
+      alert("Success!");
+    })
+    .catch((err) => {
+      alert(err.message);
+    });
+    setName("");
+    setDeg("");
+    setCollege("");
+    setCurrSem("");
+    setTrack("");
+    setVeriCode("");
+  };
   return (
     <div>
       <h1
@@ -155,10 +180,12 @@ function Program() {
               noValidate
               autoComplete="off"
             >
-              <TextField
+              <Input
                 id="outlined-basic"
                 label="Outlined"
                 variant="outlined"
+                value={Name}
+                onChange={(e) => setName(e.target.value)}
               />
             </Box>
           </Grid>
@@ -175,10 +202,12 @@ function Program() {
               noValidate
               autoComplete="off"
             >
-              <TextField
+              <Input
                 id="outlined-basic"
                 label="Outlined"
                 variant="outlined"
+                value={Deg}
+                onChange={(e) => setDeg(e.target.value)}
               />
             </Box>
           </Grid>
@@ -195,10 +224,12 @@ function Program() {
               noValidate
               autoComplete="off"
             >
-              <TextField
+              <Input
                 id="outlined-basic"
                 label="Outlined"
                 variant="outlined"
+                value={College}
+                onChange={(e) => setCollege(e.target.value)}
               />
             </Box>
           </Grid>
@@ -215,10 +246,12 @@ function Program() {
               noValidate
               autoComplete="off"
             >
-              <TextField
+              <Input
                 id="outlined-basic"
                 label="Outlined"
                 variant="outlined"
+                value={CurrSem}
+                onChange={(e) => setCurrSem(e.target.value)}
               />
             </Box>
           </Grid>
@@ -235,10 +268,12 @@ function Program() {
               noValidate
               autoComplete="off"
             >
-              <TextField
+              <Input
                 id="outlined-basic"
                 label="Outlined"
                 variant="outlined"
+                value={Track}
+                onChange={(e) => setTrack(e.target.value)}
               />
             </Box>
           </Grid>
@@ -255,12 +290,20 @@ function Program() {
               noValidate
               autoComplete="off"
             >
-              <TextField
+              <Input
                 id="outlined-basic"
                 label="Outlined"
                 variant="outlined"
+                value={VeriCode}
+                onChange={(e) => setVeriCode(e.target.value)}
               />
             </Box>
+            <Grid
+            item
+            sx={{ display: "flex", alignItems: "center", margin: "1rem" }}
+          >
+            <button onClick={handleSubmit} style={{backgroundColor:"red"}}><Typography variant="h4">submit</Typography></button>
+          </Grid>
           </Grid>
         </Grid>
       </div>
