@@ -35,7 +35,7 @@ const listItemStyle = {
   marginLeft: "20px",
 };
 
-function Program() {
+function IProgram() {
   return (
     <div>
       <h1
@@ -48,9 +48,11 @@ function Program() {
       <br></br>
       <br></br>
       <p className="text-1xl font-sans text-white py-2" style={paragraphStyle}>
-      Apply now for Codevita Live’s Cybersecurity Evangelist Live programme before the cohort gets full. Take advantage of a 6-week curriculum that covers everything that you need to know to kickstart your dream career, from scratch and at your own pace.
-
-The internship function would be activated once sufficient progress has been achieved in the course.
+        Apply now for Codevita Live’s Cybersecurity Evangelist Live programme
+        before the cohort gets full. Take advantage of a 6-week curriculum that
+        covers everything that you need to know to kickstart your dream career,
+        from scratch and at your own pace. The internship function would be
+        activated once sufficient progress has been achieved in the course.
         <br />
         <br />
       </p>
@@ -69,14 +71,13 @@ The internship function would be activated once sufficient progress has been ach
             <ListGroup.Item style={listItemStyle}>
               &bull; Guaranteed Internship Opportunity
             </ListGroup.Item>
-            
+
             <ListGroup.Item style={listItemStyle}>
               &bull; Lifetime Access
             </ListGroup.Item>
             <ListGroup.Item style={listItemStyle}>
               &bull; Zero to Hero in 6 Weeks
             </ListGroup.Item>
-            
           </ListGroup>
           <img src={programImage} alt="Program" style={imageStyle} />
         </div>
@@ -91,4 +92,4 @@ The internship function would be activated once sufficient progress has been ach
   );
 }
 
-export default Program;
+export default IProgram;

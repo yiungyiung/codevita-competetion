@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import programImage from "../images/work.png";
 import { Typography, Grid } from "@mui/material";
-import {db} from "./firebase";
-
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+//import {db} from "./firebase";
 
 const block = {
   backgroundColor: "#111829",
@@ -40,12 +41,12 @@ const listItemStyle = {
 };
 
 function Program() {
-const [Name, setName] = useState("");
-const [Deg, setDeg] = useState("");
-const [College, setCollege] = useState("");
-const [CurrSem,setCurrSem] = useState("");
-const [Track,setTrack] = useState("");
-const [VeriCode,setVeriCode] = useState("");
+  const [Name, setName] = useState("");
+  const [Deg, setDeg] = useState("");
+  const [College, setCollege] = useState("");
+  const [CurrSem, setCurrSem] = useState("");
+  const [Track, setTrack] = useState("");
+  const [VeriCode, setVeriCode] = useState("");
   return (
     <div>
       <h1
@@ -132,7 +133,7 @@ const [VeriCode,setVeriCode] = useState("");
           Cohorts Start On 15th Of Every Month.
         </Typography>
       </div>
-      <div sx={{ display: "flex", justifyContent: "center",width:"100vw" }}>
+      <div sx={{ display: "flex", justifyContent: "center", width: "100vw" }}>
         <Grid
           container
           sx={{
@@ -141,8 +142,21 @@ const [VeriCode,setVeriCode] = useState("");
             borderRadius: "2rem",
           }}
         >
-          <Grid item sx={{margin:"1rem"}} >
-            hello
+          <Grid item sx={{ margin: "1rem" }}>
+            <Box
+              component="form"
+              sx={{
+                "& > :not(style)": { m: 1, width: "25ch" },
+              }}
+              noValidate
+              autoComplete="off"
+            >
+              <TextField
+                id="outlined-basic"
+                label="Outlined"
+                variant="outlined"
+              />
+            </Box>
           </Grid>
         </Grid>
       </div>

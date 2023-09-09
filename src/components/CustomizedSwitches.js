@@ -1,8 +1,10 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
+import Footer from "./footer";
+import Navbar from "./navbar";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 500,
@@ -16,7 +18,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     padding: 0,
     transform: "translateX(0px)",
     "&.Mui-checked": {
-      transform: "translateX(120%)", 
+      transform: "translateX(120%)",
       "& .MuiSwitch-thumb:before": {
         content: '"Cybersecurity Evangelist Live"',
         position: "absolute",
@@ -67,13 +69,42 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-export default function CustomizedSwitches() {
+function CustomizedSwitches() {
+  const [switchState, setSwitchState] = useState(true); // Initialize the switch state
+
+  const handleSwitchChange = () => {
+    setSwitchState(!switchState); // Toggle the switch state
+  };
+
   return (
-    <FormGroup>
-      <FormControlLabel
-        control={<MaterialUISwitch sx={{ m: "auto" }} defaultChecked />}
-        label=""
-      />
-    </FormGroup>
+    <div>
+      <FormGroup>
+        <FormControlLabel
+          control={
+            <MaterialUISwitch
+              sx={{ m: "auto" }}
+              checked={switchState}
+              onChange={handleSwitchChange}
+            />
+          }
+          label=""
+        />
+      </FormGroup>
+
+      {/* Render your files here based on switchState */}
+      <div>
+        {switchState ? (
+          <div>
+            <h1>side 1</h1>
+          </div>
+        ) : (
+          <div>
+            <h2>side 2</h2>
+          </div>
+        )}
+      </div>
+    </div>
   );
 }
+
+export default CustomizedSwitches;
