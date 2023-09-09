@@ -1,6 +1,10 @@
-import * as React from "react";
+import React, {useState} from 'react';
 import ListGroup from "react-bootstrap/ListGroup";
 import programImage from "../images/work.png";
+import { Typography, Grid } from "@mui/material";
+import {db} from "./firebase";
+
+
 const block = {
   backgroundColor: "#111829",
 };
@@ -36,6 +40,12 @@ const listItemStyle = {
 };
 
 function Program() {
+const [Name, setName] = useState("");
+const [Deg, setDeg] = useState("");
+const [College, setCollege] = useState("");
+const [CurrSem,setCurrSem] = useState("");
+const [Track,setTrack] = useState("");
+const [VeriCode,setVeriCode] = useState("");
   return (
     <div>
       <h1
@@ -84,8 +94,59 @@ function Program() {
       <br></br>
       <br></br>
       <br></br>
+      <div
+        onClick={() => {
+          window.open(
+            "https://docs.google.com/forms/d/e/1FAIpQLSdf17YI0sj5Eu1zHnbAKvOkJzO4hd4bWuU-AiAHZFwRou32Gw/viewform",
+            "_blank"
+          );
+        }}
+        style={{
+          display: "flex",
+          justifyContent: "flex-start",
+          paddingLeft: "5vw",
+        }}
+      >
+        <button
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            backgroundColor: "#0066A1",
+            borderRadius: "2rem",
+          }}
+        >
+          <b style={{ margin: "1rem" }} className="text-white">
+            <h3>Fill the Verification Form.</h3>
+          </b>
+        </button>
+      </div>
+      <div style={{ margin: "1rem", marginTop: "3rem" }} className="text-white">
+        <Typography variant="h2">Ready to get started?</Typography>
+        <Typography
+          variant="h5"
+          style={{ marginTop: "1rem" }}
+          className="text-white"
+        >
+          Fill this form below after filling the verification form above. You
+          shall get the verification code after filling the Google Form. New
+          Cohorts Start On 15th Of Every Month.
+        </Typography>
+      </div>
+      <div sx={{ display: "flex", justifyContent: "center",width:"100vw" }}>
+        <Grid
+          container
+          sx={{
+            backgroundColor: "#4F6AFF",
+            width: "80vw",
+            borderRadius: "2rem",
+          }}
+        >
+          <Grid item sx={{margin:"1rem"}} >
+            hello
+          </Grid>
+        </Grid>
+      </div>
     </div>
   );
 }
-
 export default Program;
