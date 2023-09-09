@@ -4,9 +4,7 @@ import Cover from "./components/coverPage";
 import About from "./components/about";
 import Program from "./components/virtualIntern";
 import Footer from "./components/footer";
-import IpProgram from "./components/internshipProg";
 import CustomizedSwitches from "./components/CustomizedSwitches";
-import IProgram from "./components/intern+train";
 
 function App() {
   return (
@@ -16,8 +14,6 @@ function App() {
       <About />
       <Program />
       <CustomizedSwitches />
-      <IpProgram />
-      <IProgram />
       <Footer />
     </div>
   );

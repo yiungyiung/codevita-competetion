@@ -3,8 +3,8 @@ import { styled } from "@mui/material/styles";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
-import Footer from "./footer";
-import Navbar from "./navbar";
+import IpProgram from "./internshipProg";
+import IProgram from "./intern+train";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 500,
@@ -95,11 +95,11 @@ function CustomizedSwitches() {
       <div>
         {switchState ? (
           <div>
-            <h1>side 1</h1>
+            <IpProgram />
           </div>
         ) : (
           <div>
-            <h2>side 2</h2>
+            <IProgram />
           </div>
         )}
       </div>
