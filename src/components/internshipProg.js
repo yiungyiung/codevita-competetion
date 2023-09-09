@@ -12,7 +12,7 @@ const containerStyle = {
 
 const imageStyle = {
   position: "absolute",
-  top: -110,
+  top: -70,
   right: 0,
   maxWidth: "30vw",
 };
@@ -39,7 +39,7 @@ function IpProgram() {
   return (
     <div>
       <h1
-        className="text-4xl font-bold font-mono text-blue-600 underline"
+        className="text-4xl font-bold font-sans text-blue-600 underline"
         style={titleStyle}
       >
         Internship Cum Training Program
@@ -47,7 +47,7 @@ function IpProgram() {
       <br></br>
       <br></br>
       <br></br>
-      <p className="text-1xl font-mono text-white py-2" style={paragraphStyle}>
+      <p className="text-1xl font-sans text-white py-2" style={paragraphStyle}>
         Apply now for Codevita Live’s Data Science FastTrack programme before
         the cohort gets full. Take advantage of a 10-week curriculum that covers
         everything that you need to know to kickstart your dream career, from

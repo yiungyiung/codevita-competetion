@@ -12,7 +12,7 @@ const containerStyle = {
 
 const imageStyle = {
   position: "absolute",
-  top: -110,
+  top: -90,
   right: 0,
   maxWidth: "30vw",
 };
@@ -39,7 +39,7 @@ function Program() {
   return (
     <div>
       <h1
-        className="text-4xl font-bold font-mono text-blue-600 underline"
+        className="text-4xl font-bold font-sans text-blue-600 underline"
         style={titleStyle}
       >
         Virtual Internship Program
@@ -47,7 +47,7 @@ function Program() {
       <br></br>
       <br></br>
       <br></br>
-      <p className="text-1xl font-mono text-white py-2" style={paragraphStyle}>
+      <p className="text-1xl font-sans text-white py-2" style={paragraphStyle}>
         Get ready to take your profile to the next level with thrilling hands-on
         projects! Upon finishing the program, you'll receive a prestigious
         internship certificate, invaluable work experience, and personalized
