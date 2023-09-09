@@ -5,18 +5,20 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
-  width: 335,
-  height: 75,
+  width: 330,
+  height: 73,
   padding: 7,
+  border: "1px solid white",
+  borderRadius: 30,
+  backgroundColor: "transparent",
   "& .MuiSwitch-switchBase": {
     margin: 1,
     padding: 0,
     transform: "translateX(0px)",
     "&.Mui-checked": {
-      color: "#fff",
       transform: "translateX(178px)",
       "& .MuiSwitch-thumb:before": {
-        content: '"1"', // Change content to "1"
+        content: '"Cybersecurity Evangelist Live"',
         position: "absolute",
         display: "flex",
         alignItems: "center",
@@ -25,23 +27,24 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
         height: "100%",
         left: 0,
         top: 0,
-        color: "#fff",
-        fontSize: "24px", // Adjust font size as needed
+        fontSize: "18px",
         background: "transparent",
+        textAlign: "center", // Center-align text
       },
       "& + .MuiSwitch-track": {
         opacity: 1,
-        backgroundColor: theme.palette.mode === "dark" ? "#8796A5" : "#aab4be",
+        backgroundColor:
+          theme.palette.mode === "dark" ? "transparent" : "transparent",
       },
     },
   },
   "& .MuiSwitch-thumb": {
-    backgroundColor: theme.palette.mode === "dark" ? "#003892" : "#001e3c",
+    backgroundColor: theme.palette.mode === "dark" ? "#0066a1" : "#0066a1",
     width: 150,
     height: 70,
     borderRadius: 10,
     "&:before": {
-      content: '"2"', // Change content to "2"
+      content: '"Data Science FastTrack"',
       position: "absolute",
       display: "flex",
       alignItems: "center",
@@ -51,13 +54,15 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
       left: 0,
       top: 0,
       color: "#fff",
-      fontSize: "24px", // Adjust font size as needed
+      fontSize: "18px",
       background: "transparent",
+      textAlign: "center", // Center-align text
     },
   },
   "& .MuiSwitch-track": {
     opacity: 1,
-    backgroundColor: theme.palette.mode === "dark" ? "#8796A5" : "#aab4be",
+    backgroundColor:
+      theme.palette.mode === "dark" ? "transparent" : "transparent",
     borderRadius: 20 / 2,
   },
 }));
