@@ -3,6 +3,7 @@ import './App.css';
 import {Box} from '@mui/material';
 function App() {
   return (
+<<<<<<< Updated upstream
     <Box className="text-3xl font-bold italic underline"
     height="100vh"
     width="100vw"
@@ -18,6 +19,16 @@ function App() {
     >
       hello, world
     </Box>
+=======
+    <div>
+      <Navbar />
+      <Cover />
+      <About />
+      <Program />
+      <CustomizedSwitches />
+      <Footer />
+    </div>
+>>>>>>> Stashed changes
   );
 }
 
