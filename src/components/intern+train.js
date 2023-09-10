@@ -24,17 +24,17 @@ const imageStyle = {
 };
 
 const paragraphStyle = {
-  marginLeft: "20vw",
-  marginRight: "2vw",
+  marginLeft: "35vw",
+  marginRight: "5vw",
   marginBottom: "4vh",
   fontSize: "1.5rem",
-  textAlign: "right", // Align text to the right
+  textAlign: "center", // Align text to the right
 };
 
 const titleStyle = {
   fontSize: "3rem",
   textAlign: "center",
-  marginLeft: "20vw",
+  marginLeft: "25vw",
 };
 
 const listItemStyle = {

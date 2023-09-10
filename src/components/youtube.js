@@ -14,10 +14,11 @@ const VideoLinks = () => {
     color: "#2468ec",
     textAlign: "center",
     fontSize: "45px",
+    marginBottom: "20px",
   };
 
   return (
-    <div>
+    <div style={{ marginLeft: "50px" }}>
       <h1 style={pageTitleStyle}>Checkout What Our Ex Interns Have To Say</h1>
       <div style={videoContainerStyle}>
         <iframe

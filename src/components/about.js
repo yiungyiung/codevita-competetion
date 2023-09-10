@@ -23,7 +23,7 @@ const textContainerStyle = {
   flex: 1,
   padding: "2vw",
   maxWidth: "50vw",
-  marginTop: "-15rem", 
+  marginTop: "-15rem",
 };
 
 const textBoxStyle = {
@@ -36,20 +36,23 @@ const textBoxStyle = {
 const About = () => {
   return (
     <div id="ABOUT" style={{ position: "relative" }}>
-      <div style={{ display: "flex", width: "90vw", justifyContent: "center" }}>
-        <h1
-          className="text-5xl font-bold font-sans text-blue-600"
-          style={{ textDecoration: "underline" }}
-        >
-          About Us
-        </h1>
-      </div>
       <Grid container justifyContent="space-evenly" style={contentStyle}>
         <div>
           <img src={abtimage} alt="Overlay Image" style={overlayImageStyle} />
         </div>
         <div style={textContainerStyle}>
           <div style={textBoxStyle}>
+            <h1
+              className="text-5xl font-bold font-sans text-blue-600"
+              style={{
+                textDecoration: "underline",
+                justifyContent: "center",
+                alignContent: "center",
+                marginLeft: "170px",
+              }}
+            >
+              About Us
+            </h1>
             <p className="text-2xl font-sans text-white py-2">
               Skill Brewery is an internship initiative that facilitates the
               acquisition of essential skills for students and recent graduates
