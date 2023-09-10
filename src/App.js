@@ -5,19 +5,16 @@ import About from "./components/about";
 import Program from "./components/virtualIntern";
 import Footer from "./components/footer";
 import CustomizedSwitches from "./components/CustomizedSwitches";
-import ComposedTextField from "./components/mui_forms";
+
 
 function App() {
   return (
     <div>
       <Navbar />
-
       <Cover />
-      <ComposedTextField/>
       <About />
       <Program />
       <CustomizedSwitches />
-
       <Footer />
     </div>
   );

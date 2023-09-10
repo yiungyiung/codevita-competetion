@@ -1,56 +1,86 @@
-import React from "react";
 import { Box, TextField } from "@mui/material";
-import MenuItem from '@mui/material/MenuItem';
+import MenuItem from "@mui/material/MenuItem";
 import { Typography, Grid } from "@mui/material";
+import React, { useState } from "react";
+import { db } from "./firebase";
 const currencies = [
   {
-    value: 'Web Dev',
-    label: 'Web Dev',
+    value: "Web Dev",
+    label: "Web Dev",
   },
   {
-    value: 'App Dev',
-    label: 'App Dev',
+    value: "App Dev",
+    label: "App Dev",
   },
   {
-    value: 'Product Management',
-    label: 'Product Management',
+    value: "Product Management",
+    label: "Product Management",
   },
   {
-    value: 'Computer Vision',
-    label: 'Computer Vision',
+    value: "Computer Vision",
+    label: "Computer Vision",
   },
   {
-    value: 'Data Science',
-    label: 'Data Science',
+    value: "Data Science",
+    label: "Data Science",
   },
   {
-    value: 'DBMS',
-    label: 'DBMS',
+    value: "DBMS",
+    label: "DBMS",
   },
   {
-    value: 'Cyber Security',
-    label: 'Cyber Security',
+    value: "Cyber Security",
+    label: "Cyber Security",
   },
 ];
 
 export default function ComposedTextField() {
+  const [Name, setName] = useState("");
+  const [DegCol, setDegCol] = useState("");
+  const [CurrSem, setCurrSem] = useState("");
+  const [Track, setTrack] = useState("");
+  const [VeriCode, setVeriCode] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(Name, DegCol, CurrSem, Track, VeriCode);
+    db.collection("But")
+      .add({
+        Name: Name,
+        DegreeCollege:DegCol,
+        CurrentSem: CurrSem,
+        Track: Track,
+        Verificationcode: VeriCode,
+      })
+      .then(() => {
+        alert("Success!");
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
+    setName("");
+    setDegCol("")
+    setCurrSem("");
+    setTrack("");
+    setVeriCode("");
+  };
   return (
-<Box
-  component="form"
-  sx={{
-    "& > :not(style)": {
-      m: 1,
-    },
-    display: "inline-block",
-    border: "3px solid #2468ec",
-    borderRadius:"10px",
-    width: "500px", 
-  }}
-  noValidate
-  autoComplete="off"
->
+    <Box
+      component="form"
+      sx={{
+        "& > :not(style)": {
+          m: 1,
+        },
+        display: "inline-block",
+        border: "3px solid #2468ec",
+        borderRadius: "10px",
+        width: "500px",
+      }}
+      noValidate
+      autoComplete="off"
+    >
       <TextField
         fullWidth
+        onChange={(e) => setName(e.target.value)}
         label="Name"
         id="name"
         sx={{
@@ -72,6 +102,7 @@ export default function ComposedTextField() {
       />
 
       <TextField
+        onChange={(e) => setDegCol(e.target.value)}
         fullWidth
         label="College+Degree"
         sx={{
@@ -93,12 +124,13 @@ export default function ComposedTextField() {
       />
 
       <TextField
+        onChange={(e) => setCurrSem(e.target.value)}
         fullWidth
         label="Semester"
-        type="number" 
+        type="number"
         inputProps={{
-          min: 1, 
-          max: 10, 
+          min: 1,
+          max: 10,
         }}
         sx={{
           "& .MuiInputLabel-root": { color: "white" },
@@ -121,6 +153,7 @@ export default function ComposedTextField() {
       <TextField
         select
         label="Track"
+        onChange={(e) => setTrack(e.target.value)}
         defaultValue="Track"
         sx={{
           "& .MuiInputLabel-root": { color: "white" },
@@ -136,7 +169,7 @@ export default function ComposedTextField() {
           "& .MuiSelect-icon": {
             color: "white",
           },
-          width: '250%',
+          width: "250%",
         }}
         InputLabelProps={{ shrink: true, sx: { color: "#fff" } }}
         InputProps={{
@@ -151,6 +184,7 @@ export default function ComposedTextField() {
       </TextField>
 
       <TextField
+        onChange={(e) => setVeriCode(e.target.value)}
         fullWidth
         label="Verification Code"
         sx={{
@@ -170,24 +204,21 @@ export default function ComposedTextField() {
           style: { color: "white" },
         }}
       />
-      <Grid
-             container
-             justifyContent="center" 
-             sx={{ margin: "10rem" }}
-            >
-                   <button
-  style={{
-    backgroundColor: "red",
-    borderRadius: "50px",
-    border: "2px solid white",
-    color: "white",
-    fontSize: "12px", 
-    padding: "10px 20px",
-  }}
->
-  <Typography variant="h5">submit</Typography>
-</button>
-            </Grid>
+      <Grid container justifyContent="center" sx={{ margin: "10rem" }}>
+        <button
+          style={{
+            backgroundColor: "red",
+            borderRadius: "50px",
+            border: "2px solid white",
+            color: "white",
+            fontSize: "12px",
+            padding: "10px 20px",
+          }}
+          onClick={handleSubmit}
+        >
+          <Typography variant="h5">submit</Typography>
+        </button>
+      </Grid>
     </Box>
   );
 }

@@ -5,7 +5,7 @@ import { Typography, Grid } from "@mui/material";
 import Box from "@mui/material/Box";
 import Input from "@mui/material/Input";
 import { db } from "./firebase";
-
+import ComposedTextField from "./mui_forms";
 const block = {
   backgroundColor: "#111829",
 };
@@ -41,37 +41,6 @@ const listItemStyle = {
 };
 
 function Program() {
-  const [Name, setName] = useState("");
-  const [Deg, setDeg] = useState("");
-  const [College, setCollege] = useState("");
-  const [CurrSem, setCurrSem] = useState("");
-  const [Track, setTrack] = useState("");
-  const [VeriCode, setVeriCode] = useState("");
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(Name, Deg, CurrSem, Track, VeriCode, College);
-    db.collection("But")
-      .add({
-        Name: Name,
-        Degree: Deg,
-        College: College,
-        CurrentSem: CurrSem,
-        Track: Track,
-        Verificationcode: VeriCode,
-      })
-      .then(() => {
-        alert("Success!");
-      })
-      .catch((err) => {
-        alert(err.message);
-      });
-    setName("");
-    setDeg("");
-    setCollege("");
-    setCurrSem("");
-    setTrack("");
-    setVeriCode("");
-  };
   return (
     <div id="VI">
       <h1
@@ -158,156 +127,8 @@ function Program() {
           Cohorts Start On 15th Of Every Month.
         </Typography>
       </div>
-      <div sx={{ display: "flex", justifyContent: "center", width: "100vw" }}>
-        <Grid
-          container
-          sx={{
-            backgroundColor: "#4F6AFF",
-            width: "80vw",
-            borderRadius: "2rem",
-          }}
-        >
-          <Grid
-            item
-            sx={{ display: "flex", alignItems: "center", margin: "1rem" }}
-          >
-            <h2>Name:</h2>
-            <Box
-              component="form"
-              sx={{
-                "& > :not(style)": { m: 1, width: "25ch" },
-              }}
-              noValidate
-              autoComplete="off"
-            >
-              <Input
-                id="outlined-basic"
-                label="Outlined"
-                variant="outlined"
-                value={Name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </Box>
-          </Grid>
-          <Grid
-            item
-            sx={{ display: "flex", alignItems: "center", margin: "1rem" }}
-          >
-            <h2>Degree:</h2>
-            <Box
-              component="form"
-              sx={{
-                "& > :not(style)": { m: 1, width: "25ch" },
-              }}
-              noValidate
-              autoComplete="off"
-            >
-              <Input
-                id="outlined-basic"
-                label="Outlined"
-                variant="outlined"
-                value={Deg}
-                onChange={(e) => setDeg(e.target.value)}
-              />
-            </Box>
-          </Grid>
-          <Grid
-            item
-            sx={{ display: "flex", alignItems: "center", margin: "1rem" }}
-          >
-            <h2>College:</h2>
-            <Box
-              component="form"
-              sx={{
-                "& > :not(style)": { m: 1, width: "25ch" },
-              }}
-              noValidate
-              autoComplete="off"
-            >
-              <Input
-                id="outlined-basic"
-                label="Outlined"
-                variant="outlined"
-                value={College}
-                onChange={(e) => setCollege(e.target.value)}
-              />
-            </Box>
-          </Grid>
-          <Grid
-            item
-            sx={{ display: "flex", alignItems: "center", margin: "1rem" }}
-          >
-            <h2>Current Semester:</h2>
-            <Box
-              component="form"
-              sx={{
-                "& > :not(style)": { m: 1, width: "25ch" },
-              }}
-              noValidate
-              autoComplete="off"
-            >
-              <Input
-                id="outlined-basic"
-                label="Outlined"
-                variant="outlined"
-                value={CurrSem}
-                onChange={(e) => setCurrSem(e.target.value)}
-              />
-            </Box>
-          </Grid>
-          <Grid
-            item
-            sx={{ display: "flex", alignItems: "center", margin: "1rem" }}
-          >
-            <h2>Track:</h2>
-            <Box
-              component="form"
-              sx={{
-                "& > :not(style)": { m: 1, width: "25ch" },
-              }}
-              noValidate
-              autoComplete="off"
-            >
-              <Input
-                id="outlined-basic"
-                label="Outlined"
-                variant="outlined"
-                value={Track}
-                onChange={(e) => setTrack(e.target.value)}
-              />
-            </Box>
-          </Grid>
-          <Grid
-            item
-            sx={{ display: "flex", alignItems: "center", margin: "1rem" }}
-          >
-            <h2>Verification Code:</h2>
-            <Box
-              component="form"
-              sx={{
-                "& > :not(style)": { m: 1, width: "25ch" },
-              }}
-              noValidate
-              autoComplete="off"
-            >
-              <Input
-                id="outlined-basic"
-                label="Outlined"
-                variant="outlined"
-                value={VeriCode}
-                onChange={(e) => setVeriCode(e.target.value)}
-              />
-            </Box>
-            <Grid
-              item
-              sx={{ display: "flex", alignItems: "center", margin: "1rem" }}
-            >
-              <button onClick={handleSubmit} style={{ backgroundColor: "red" }}>
-                <Typography variant="h4">submit</Typography>
-              </button>
-            </Grid>
-          </Grid>
-        </Grid>
+      <div>
+        <ComposedTextField/>
       </div>
     </div>
   );
