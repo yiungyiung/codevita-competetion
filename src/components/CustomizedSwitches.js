@@ -69,6 +69,12 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
+const ToggleContainer = styled("div")({
+  marginTop: "40px",   
+  marginBottom: "40px",
+  textAlign: "center", 
+});
+
 function CustomizedSwitches() {
   const [switchState, setSwitchState] = useState(true); // Initialize the switch state
 
@@ -77,7 +83,7 @@ function CustomizedSwitches() {
   };
 
   return (
-    <div id="PROG">
+    <ToggleContainer>
       <FormGroup>
         <FormControlLabel
           control={
@@ -90,21 +96,21 @@ function CustomizedSwitches() {
           label=""
         />
       </FormGroup>{" "}
-      {/* Render your files here based on switchState */}{" "}
       <div>
         {" "}
         {switchState ? (
           <div>
-            <IpProgram />
+            <IProgram />
           </div>
         ) : (
           <div>
-            <IProgram />
+            <IpProgram />
           </div>
         )}{" "}
       </div>{" "}
-    </div>
+    </ToggleContainer>
   );
+  <br/>
 }
 
 export default CustomizedSwitches;

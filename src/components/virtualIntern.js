@@ -85,11 +85,6 @@ function Program() {
         </div>
       </div>
       <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
       <div
         onClick={() => {
           window.open(

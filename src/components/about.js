@@ -5,7 +5,7 @@ import abtimage from "../images/image-removebg-preview (45) 1.png";
 const overlayImageStyle = {
   width: "40vw",
   height: "auto",
-  marginTop: "1vh",
+  marginTop: "-20vh",
 };
 
 const contentStyle = {
@@ -23,6 +23,7 @@ const textContainerStyle = {
   flex: 1,
   padding: "2vw",
   maxWidth: "50vw",
+  marginTop: "-15rem", 
 };
 
 const textBoxStyle = {
