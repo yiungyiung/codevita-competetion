@@ -40,13 +40,16 @@ export default function ComposedTextField() {
   const [CurrSem, setCurrSem] = useState("");
   const [Track, setTrack] = useState("");
   const [VeriCode, setVeriCode] = useState("");
+  const isFormValid = () => {
+    return Name !== "" && DegCol !== "" && CurrSem !== "" && Track !== "";
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(Name, DegCol, CurrSem, Track, VeriCode);
-    db.collection("But")
+    db.collection("CohortForm")
       .add({
         Name: Name,
-        DegreeCollege:DegCol,
+        DegreeCollege: DegCol,
         CurrentSem: CurrSem,
         Track: Track,
         Verificationcode: VeriCode,
@@ -58,7 +61,7 @@ export default function ComposedTextField() {
         alert(err.message);
       });
     setName("");
-    setDegCol("")
+    setDegCol("");
     setCurrSem("");
     setTrack("");
     setVeriCode("");
@@ -80,6 +83,7 @@ export default function ComposedTextField() {
     >
       <TextField
         fullWidth
+        value={Name}
         onChange={(e) => setName(e.target.value)}
         label="Name"
         id="name"
@@ -102,6 +106,7 @@ export default function ComposedTextField() {
       />
 
       <TextField
+        value={DegCol}
         onChange={(e) => setDegCol(e.target.value)}
         fullWidth
         label="College+Degree"
@@ -124,6 +129,7 @@ export default function ComposedTextField() {
       />
 
       <TextField
+        value={CurrSem}
         onChange={(e) => setCurrSem(e.target.value)}
         fullWidth
         label="Semester"
@@ -151,6 +157,7 @@ export default function ComposedTextField() {
       />
 
       <TextField
+        value={Track}
         select
         label="Track"
         onChange={(e) => setTrack(e.target.value)}
@@ -184,6 +191,7 @@ export default function ComposedTextField() {
       </TextField>
 
       <TextField
+        values={VeriCode}
         onChange={(e) => setVeriCode(e.target.value)}
         fullWidth
         label="Verification Code"
@@ -206,8 +214,9 @@ export default function ComposedTextField() {
       />
       <Grid container justifyContent="center" sx={{ margin: "10rem" }}>
         <button
+          disabled={!isFormValid()}
           style={{
-            backgroundColor: "red",
+            backgroundColor: !isFormValid() ? "#EBEBE4" : "red",
             borderRadius: "50px",
             border: "2px solid white",
             color: "white",

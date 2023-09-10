@@ -2,7 +2,7 @@ import * as React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import programImage from "../images/Group.png";
 import { Grid } from "@mui/material";
-
+import IT from "./I+T_form";
 const block = {
   backgroundColor: "#111829",
 };
@@ -88,6 +88,7 @@ function IpProgram() {
           <img src={programImage} alt="Program" style={imageStyle} />
         </div>
       </div>
+      <IT formname="Data Science FastTrack" />
     </div>
   );
 }

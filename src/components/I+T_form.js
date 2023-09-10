@@ -1,12 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Grid, TextField } from "@mui/material";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { Typography } from "@mui/material";
+import { db } from "./firebase";
+export default function IT(props) {
+  const [Name, setName] = useState("");
+  const [Deg, setDeg] = useState("");
+  const [Col, setCol] = useState("");
+  const [CurrSem, setCurrSem] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Phone, setPhone] = useState("");
+  const [Datee, setDatee] = useState(null);
 
-export default function IT() {
+  const isFormValid = () => {
+    return (
+      Name !== "" && Email !== "",
+      Phone !== "" &&
+        Deg !== "" &&
+        Col !== "" &&
+        CurrSem !== "" &&
+        Datee !== null
+    );
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(Name, Deg, CurrSem, Col, Email, Phone, Datee);
+    db.collection(props.formname)
+      .add({
+        Name: Name,
+        Degree: Deg,
+        College: Col,
+        CurrentSem: CurrSem,
+        Phone: Phone,
+        Email: Email,
+        SDate: Datee.toString(),
+      })
+      .then(() => {
+        alert("Success!");
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
+    setName("");
+    setDeg("");
+    setCol("");
+    setCurrSem("");
+    setEmail("");
+    setPhone("");
+    setDatee(null);
+  };
   return (
     <Grid item xs={6} sx={{ boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)" }}>
       <Box
@@ -18,6 +64,8 @@ export default function IT() {
         autoComplete="off"
       >
         <TextField
+          value={Name}
+          onChange={(e) => setName(e.target.value)}
           fullWidth
           label="Name"
           id="name"
@@ -40,6 +88,8 @@ export default function IT() {
         />
 
         <TextField
+          value={Col}
+          onChange={(e) => setCol(e.target.value)}
           fullWidth
           label="College"
           sx={{
@@ -60,6 +110,8 @@ export default function IT() {
           }}
         />
         <TextField
+          value={Deg}
+          onChange={(e) => setDeg(e.target.value)}
           fullWidth
           label="Degree"
           sx={{
@@ -80,13 +132,20 @@ export default function IT() {
           }}
         />
         <TextField
+          value={CurrSem}
+          onChange={(e) => setCurrSem(e.target.value)}
           fullWidth
-          label=" Current Semester"
+          label="Semester"
+          type="number"
+          inputProps={{
+            min: 1,
+            max: 10,
+          }}
           sx={{
             "& .MuiInputLabel-root": { color: "white" },
             "& .MuiOutlinedInput-root": {
               "& > fieldset": { borderColor: "white" },
-              width: "10%", // Set width to 60%
+              width: "30%",
             },
             "& .MuiOutlinedInput-root:hover": {
               "& > fieldset": {
@@ -101,6 +160,8 @@ export default function IT() {
         />
 
         <TextField
+          value={Email}
+          onChange={(e) => setEmail(e.target.value)}
           fullWidth
           label="Email ID"
           sx={{
@@ -121,6 +182,8 @@ export default function IT() {
           }}
         />
         <TextField
+          value={Phone}
+          onChange={(e) => setPhone(e.target.value)}
           fullWidth
           label="Phone Number"
           sx={{
@@ -143,27 +206,37 @@ export default function IT() {
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <DemoContainer components={["DatePicker"]}>
             <DatePicker
+              value={Datee}
+              onChange={(date) => setDatee(date)}
+              color="white"
               label="Basic date picker"
               sx={{
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
                     borderColor: "white",
                   },
-                  "&:hover fieldset": {
-                    borderColor: "white",
-                  },
-
-                  "&.Mui-focused fieldset": {
-                    borderColor: "white",
-                  },
+                },
+                "& .MuiFormLabel-root": {
+                  color: "white",
+                },
+                "& .MuiInputLabel-outlined.Mui-focused": {
+                  color: "white",
+                },
+                "& .MuiSvgIcon-root": {
+                  color: "white",
+                },
+                "& .MuiInputBase-input": {
+                  color: "white",
                 },
               }}
             />
           </DemoContainer>
         </LocalizationProvider>
         <button
+          disabled={!isFormValid()}
+          onClick={handleSubmit}
           style={{
-            backgroundColor: "red",
+            backgroundColor: !isFormValid() ? "#EBEBE4" : "red",
             borderRadius: "50px",
             border: "2px solid white",
             color: "white",

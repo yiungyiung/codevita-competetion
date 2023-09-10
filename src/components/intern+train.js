@@ -2,6 +2,7 @@ import * as React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import programImage from "../images/landing-img.png";
 import { Grid } from "@mui/material";
+import IT from "./I+T_form";
 const block = {
   backgroundColor: "#111829",
 };
@@ -91,12 +92,7 @@ function IProgram() {
           <img src={programImage} alt="Program" style={imageStyle} />
         </div>
       </div>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
+      <IT formname="Cybersecurity Evangelist" />
     </div>
   );
 }
