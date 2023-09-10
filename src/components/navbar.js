@@ -1,4 +1,5 @@
 import React from "react";
+import { useRef } from "react";
 import {
   AppBar,
   Box,
@@ -26,7 +27,11 @@ function Navbar() {
             <Grid item xs={12} sm={6}>
               <Toolbar>
                 <Stack direction="row" spacing={1}>
-                  <Button color="inherit" sx={{ fontSize: "15px" }}>
+                  <Button
+                    href="#HOME"
+                    color="inherit"
+                    sx={{ fontSize: "15px" }}
+                  >
                     HOME
                   </Button>
                   <Button color="inherit" sx={{ fontSize: "15px" }}>

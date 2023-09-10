@@ -25,7 +25,7 @@ const overlayImageStyle = {
 
 function Cover() {
   return (
-    <div>
+    <div id="HOME">
       <div style={coverStyle}></div>
       <div>
         <img src={overlayImage} alt="Overlay Image" style={overlayImageStyle} />

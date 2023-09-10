@@ -1,5 +1,4 @@
 import React from "react";
-import { Divider } from "@mui/material";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
@@ -10,11 +9,13 @@ import footerimage from "../images/web-development 1.png";
 
 const Footer = () => {
   const overlayImageStyle = {
-    float: 'right',width: '400px',height: 'auto'
+    float: "right",
+    width: "400px",
+    height: "auto",
   };
 
   return (
-    <footer>
+    <footer id="CONTACT">
       <div style={{ backgroundColor: "#0066A1" }}>
         <div
           style={{
@@ -28,13 +29,17 @@ const Footer = () => {
             width: "100%",
           }}
         >
-          <Divider variant="middle" sx={{ backgroundColor: "white" }} />
-          {/* Add the <img> element here */}
           <div>
-            <img src={footerimage} alt="Overlay Image" style={overlayImageStyle} />
+            <img
+              src={footerimage}
+              alt="Overlay Image"
+              style={overlayImageStyle}
+            />
           </div>
           <div>
-            <h2>Get In Touch</h2>
+            <h2>
+              <b>Get In Touch</b>
+            </h2>
             <a
               target="_blank"
               rel="noopener noreferrer"

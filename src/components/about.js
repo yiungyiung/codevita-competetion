@@ -34,7 +34,7 @@ const textBoxStyle = {
 
 const About = () => {
   return (
-    <div style={{ position: "relative" }}>
+    <div id="ABOUT" style={{ position: "relative" }}>
       <Grid container justifyContent="space-evenly" style={contentStyle}>
         <div>
           <img src={abtimage} alt="Overlay Image" style={overlayImageStyle} />
