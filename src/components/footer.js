@@ -7,6 +7,8 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import footerimage from "../images/web-development 1.png";
 
+import { Button } from "bootstrap";
+
 const Footer = () => {
   const overlayImageStyle = {
     float: "right",
@@ -79,6 +81,7 @@ const Footer = () => {
               </h2>
             </a>
           </div>
+
           <div>
             <a
               href="https://www.facebook.com/codevitalive"
@@ -119,6 +122,15 @@ const Footer = () => {
                 fontSize="large"
                 sx={{ fill: "white", padding: "4px" }}
               />
+            </a>
+            <a
+              style={{
+                cursor: "pointer",
+                color: "white",
+              }}
+              href="/term"
+            >
+              Terms and Conditions
             </a>
           </div>
         </div>
