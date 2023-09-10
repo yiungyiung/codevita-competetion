@@ -88,7 +88,10 @@ function IpProgram() {
           <img src={programImage} alt="Program" style={imageStyle} />
         </div>
       </div>
-      <IT formname="Data Science FastTrack" />
+      <IT
+        formname="Data Science FastTrack"
+        link="https://www.instamojo.com/@codevitalive/l406807c4d9d6445d8c614fe1ab25be62/"
+      />
     </div>
   );
 }

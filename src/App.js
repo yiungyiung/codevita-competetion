@@ -43,19 +43,4 @@ function Home() {
   );
 }
 
-function TermsPage() {
-  const navigate = useNavigate();
-
-  const goBackToHome = () => {
-    navigate("/");
-  };
-
-  return (
-    <div>
-      <button onClick={goBackToHome}>Back to Home</button>
-      <Outlet />
-    </div>
-  );
-}
-
 export default App;

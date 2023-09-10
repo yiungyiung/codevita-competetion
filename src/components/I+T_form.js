@@ -42,6 +42,7 @@ export default function IT(props) {
       })
       .then(() => {
         alert("Success!");
+        window.location.href = props.link;
       })
       .catch((err) => {
         alert(err.message);
@@ -256,6 +257,7 @@ export default function IT(props) {
         </LocalizationProvider>
 
         {/* Submit Button */}
+
         <button
           disabled={!isFormValid()}
           onClick={handleSubmit}

@@ -6,7 +6,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { db } from "./firebase";
 
-export default function IT(props) {
+export default function ITT(props) {
   const [Name, setName] = useState("");
   const [Deg, setDeg] = useState("");
   const [Col, setCol] = useState("");

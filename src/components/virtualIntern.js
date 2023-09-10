@@ -43,7 +43,7 @@ const listItemStyle = {
 
 function Program() {
   return (
-    <div id="VI" style={{ widht: "90vw" }}>
+    <div id="PROG" style={{ widht: "90vw" }}>
       <h1
         className="text-4xl font-bold font-sans text-blue-600 underline"
         style={titleStyle}
@@ -123,7 +123,7 @@ function Program() {
           Cohorts Start On 15th Of Every Month.
         </Typography>
       </div>
-      <div style={{ display: "flex",justifyContent:"space-evenly" }}>
+      <div style={{ display: "flex", justifyContent: "space-evenly" }}>
         <ComposedTextField />
 
         <BT />
