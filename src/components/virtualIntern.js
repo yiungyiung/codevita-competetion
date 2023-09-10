@@ -6,6 +6,7 @@ import Box from "@mui/material/Box";
 import Input from "@mui/material/Input";
 import { db } from "./firebase";
 import ComposedTextField from "./mui_forms";
+import BT from "./table";
 const block = {
   backgroundColor: "#111829",
 };
@@ -42,7 +43,7 @@ const listItemStyle = {
 
 function Program() {
   return (
-    <div id="VI">
+    <div id="VI" style={{ widht: "90vw" }}>
       <h1
         className="text-4xl font-bold font-sans text-blue-600 underline"
         style={titleStyle}
@@ -127,8 +128,10 @@ function Program() {
           Cohorts Start On 15th Of Every Month.
         </Typography>
       </div>
-      <div>
-        <ComposedTextField/>
+      <div style={{ display: "flex",justifyContent:"space-evenly" }}>
+        <ComposedTextField />
+
+        <BT />
       </div>
     </div>
   );

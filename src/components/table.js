@@ -46,8 +46,8 @@ const boldCellStyle = {
 };
 
 const containerStyle = {
-  width: '35%',
-  float: 'right',
+  width: '40%',
+  float: 'left',
   marginRight: '20px',
 };
 const transparentPaperStyle = {
