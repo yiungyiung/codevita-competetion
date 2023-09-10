@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Box, Grid, TextField } from "@mui/material";
+import { Box, Grid, TextField, Typography } from "@mui/material";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import { Typography } from "@mui/material";
 import { db } from "./firebase";
+
 export default function IT(props) {
   const [Name, setName] = useState("");
   const [Deg, setDeg] = useState("");
@@ -17,12 +17,13 @@ export default function IT(props) {
 
   const isFormValid = () => {
     return (
-      Name !== "" && Email !== "",
+      Name !== "" &&
+      Email !== "" &&
       Phone !== "" &&
-        Deg !== "" &&
-        Col !== "" &&
-        CurrSem !== "" &&
-        Datee !== null
+      Deg !== "" &&
+      Col !== "" &&
+      CurrSem !== "" &&
+      Datee !== null
     );
   };
 
@@ -53,6 +54,7 @@ export default function IT(props) {
     setPhone("");
     setDatee(null);
   };
+
   return (
     <Grid item xs={6} sx={{ boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)" }}>
       <Box
@@ -63,6 +65,16 @@ export default function IT(props) {
         noValidate
         autoComplete="off"
       >
+        {/* Heading and Introductory Text */}
+        <Typography variant="h4" gutterBottom style={{ color: "#2468ec" }}>
+          Ready to get started?
+        </Typography>
+        <Typography variant="body1" paragraph style={{ color: "#2468ec" }}>
+          Fill this form below and pay the enrollment fees to complete your
+          enrollment!
+        </Typography>
+
+        {/* Name */}
         <TextField
           value={Name}
           onChange={(e) => setName(e.target.value)}
@@ -73,7 +85,7 @@ export default function IT(props) {
             "& .MuiInputLabel-root": { color: "white" },
             "& .MuiOutlinedInput-root": {
               "& > fieldset": { borderColor: "white" },
-              width: "60%", // Set width to 60%
+              width: "60%",
             },
             "& .MuiOutlinedInput-root:hover": {
               "& > fieldset": {
@@ -87,6 +99,7 @@ export default function IT(props) {
           }}
         />
 
+        {/* College */}
         <TextField
           value={Col}
           onChange={(e) => setCol(e.target.value)}
@@ -96,7 +109,7 @@ export default function IT(props) {
             "& .MuiInputLabel-root": { color: "white" },
             "& .MuiOutlinedInput-root": {
               "& > fieldset": { borderColor: "white" },
-              width: "60%", // Set width to 60%
+              width: "60%",
             },
             "& .MuiOutlinedInput-root:hover": {
               "& > fieldset": {
@@ -109,6 +122,8 @@ export default function IT(props) {
             style: { color: "white" },
           }}
         />
+
+        {/* Degree */}
         <TextField
           value={Deg}
           onChange={(e) => setDeg(e.target.value)}
@@ -118,7 +133,7 @@ export default function IT(props) {
             "& .MuiInputLabel-root": { color: "white" },
             "& .MuiOutlinedInput-root": {
               "& > fieldset": { borderColor: "white" },
-              width: "60%", // Set width to 60%
+              width: "60%",
             },
             "& .MuiOutlinedInput-root:hover": {
               "& > fieldset": {
@@ -131,6 +146,8 @@ export default function IT(props) {
             style: { color: "white" },
           }}
         />
+
+        {/* Semester */}
         <TextField
           value={CurrSem}
           onChange={(e) => setCurrSem(e.target.value)}
@@ -159,6 +176,7 @@ export default function IT(props) {
           }}
         />
 
+        {/* Email */}
         <TextField
           value={Email}
           onChange={(e) => setEmail(e.target.value)}
@@ -168,7 +186,7 @@ export default function IT(props) {
             "& .MuiInputLabel-root": { color: "white" },
             "& .MuiOutlinedInput-root": {
               "& > fieldset": { borderColor: "white" },
-              width: "60%", // Set width to 100%
+              width: "60%",
             },
             "& .MuiOutlinedInput-root:hover": {
               "& > fieldset": {
@@ -181,6 +199,8 @@ export default function IT(props) {
             style: { color: "white" },
           }}
         />
+
+        {/* Phone Number */}
         <TextField
           value={Phone}
           onChange={(e) => setPhone(e.target.value)}
@@ -190,7 +210,7 @@ export default function IT(props) {
             "& .MuiInputLabel-root": { color: "white" },
             "& .MuiOutlinedInput-root": {
               "& > fieldset": { borderColor: "white" },
-              width: "60%", // Set width to 100%
+              width: "60%",
             },
             "& .MuiOutlinedInput-root:hover": {
               "& > fieldset": {
@@ -203,6 +223,8 @@ export default function IT(props) {
             style: { color: "white" },
           }}
         />
+
+        {/* Date Picker */}
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <DemoContainer components={["DatePicker"]}>
             <DatePicker
@@ -232,6 +254,8 @@ export default function IT(props) {
             />
           </DemoContainer>
         </LocalizationProvider>
+
+        {/* Submit Button */}
         <button
           disabled={!isFormValid()}
           onClick={handleSubmit}
@@ -244,7 +268,7 @@ export default function IT(props) {
             padding: "10px 20px",
           }}
         >
-          <Typography variant="h5">submit</Typography>
+          <Typography variant="h5">Submit</Typography>
         </button>
       </Box>
     </Grid>
