@@ -1,19 +1,19 @@
-import React from 'react';
+import React from "react";
 
 const VideoLinks = () => {
-  const youtubeVideoLink1 = 'https://youtu.be/h4X8rKDSpjo'; 
-  const youtubeVideoLink2 = 'https://youtu.be/J09qee7fYfk'; 
+  const youtubeVideoLink1 = "https://youtu.be/h4X8rKDSpjo";
+  const youtubeVideoLink2 = "https://youtu.be/J09qee7fYfk";
 
   const videoContainerStyle = {
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr', 
-    gap: '16px', 
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    gap: "16px",
   };
 
   const pageTitleStyle = {
-    color: '#2468ec',
-    textAlign: 'center', 
-    fontSize: '45px'
+    color: "#2468ec",
+    textAlign: "center",
+    fontSize: "45px",
   };
 
   return (
@@ -23,7 +23,7 @@ const VideoLinks = () => {
         <iframe
           width="560"
           height="315"
-          src={youtubeVideoLink1.replace('youtu.be/', 'www.youtube.com/embed/')}
+          src={youtubeVideoLink1.replace("youtu.be/", "www.youtube.com/embed/")}
           title="Embedded YouTube Video 1"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -32,14 +32,15 @@ const VideoLinks = () => {
         <iframe
           width="560"
           height="315"
-          src={youtubeVideoLink2.replace('youtu.be/', 'www.youtube.com/embed/')}
+          src={youtubeVideoLink2.replace("youtu.be/", "www.youtube.com/embed/")}
           title="Embedded YouTube Video 2"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
       </div>
-      <br/><br/>
+      <br />
+      <br />
     </div>
   );
 };
