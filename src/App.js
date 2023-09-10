@@ -11,10 +11,13 @@ function App() {
   return (
     <div>
       <Navbar />
+
       <Cover />
+      <ComposedTextField/>
       <About />
       <Program />
       <CustomizedSwitches />
+
       <Footer />
     </div>
   );
