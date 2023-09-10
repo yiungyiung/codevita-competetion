@@ -5,12 +5,12 @@ import abtimage from "../images/image-removebg-preview (45) 1.png";
 const overlayImageStyle = {
   width: "40vw",
   height: "auto",
-  marginTop: "-1vh",
+  marginTop: "1vh",
 };
 
 const contentStyle = {
   fontFamily: "Helvetica, Arial, sans-serif", // Apply Helvetica font to the entire page
-  marginTop:"-4rem",
+  marginTop: "4rem",
   minHeight: "100vh",
   display: "flex",
   flexDirection: "row",
@@ -35,13 +35,13 @@ const textBoxStyle = {
 const About = () => {
   return (
     <div id="ABOUT" style={{ position: "relative" }}>
-      <div style={{display: "flex", width:"90vw",justifyContent: "center"}}>
-      <h1
-        className="text-5xl font-bold font-sans text-blue-600"
-        style={{ textDecoration: "underline", }}
-      >
-        About Us
-      </h1>
+      <div style={{ display: "flex", width: "90vw", justifyContent: "center" }}>
+        <h1
+          className="text-5xl font-bold font-sans text-blue-600"
+          style={{ textDecoration: "underline" }}
+        >
+          About Us
+        </h1>
       </div>
       <Grid container justifyContent="space-evenly" style={contentStyle}>
         <div>
