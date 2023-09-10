@@ -6,16 +6,37 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import footerimage from "../images/web-development 1.png";
+import { Box,Button, Modal } from "@mui/material";
+import Terms from "./T&C"
+const style = {
+  position: 'absolute',
+  width: 800, // Set the width of the modal
+  height: 800, // Set the height of the modal
+  overflow: 'auto', // Make the content inside scrollable
+  backgroundColor: 'black',
+  border: '2px solid #000',
+  boxShadow: '10px 10px 5px grey',
+  padding: '16px 32px 24px',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)'
 
-import { Button } from "bootstrap";
-
+};
 const Footer = () => {
   const overlayImageStyle = {
     float: "right",
     width: "400px",
     height: "auto",
   };
+  const [open, setOpen] = React.useState(false);
 
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <footer id="CONTACT">
       <div style={{ backgroundColor: "#0066A1" }}>
@@ -123,15 +144,17 @@ const Footer = () => {
                 sx={{ fill: "white", padding: "4px" }}
               />
             </a>
-            <a
-              style={{
-                cursor: "pointer",
-                color: "white",
-              }}
-              href="/term"
+            <Button sx={{color: "white"}}onClick={handleOpen} >Terms and Conditions</Button>
+            <Modal
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="simple-modal-title"
+              aria-describedby="simple-modal-description"
             >
-              Terms and Conditions
-            </a>
+              <Box sx={style}>
+              <Terms/>
+              </Box>
+            </Modal>
           </div>
         </div>
       </div>

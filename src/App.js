@@ -7,24 +7,11 @@ import Footer from "./components/footer";
 import CustomizedSwitches from "./components/CustomizedSwitches";
 import Terms from "./components/T&C";
 import VideoLinks from "./components/youtube";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Outlet,
-  Link,
-  useNavigate,
-} from "react-router-dom";
 
 function App() {
   return (
     <div>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/term" element={<Terms />} />
-        </Routes>
-      </Router>
+      <Home />
     </div>
   );
 }

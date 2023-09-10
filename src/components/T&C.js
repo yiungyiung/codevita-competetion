@@ -1,33 +1,9 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Outlet,
-  Link,
-  useNavigate,
-} from "react-router-dom";
-const buttonStyle = {
-  color: "white", // Set text color to white
-  backgroundColor: "transparent", // Make the background transparent
-  border: "2px solid white", // Add a white outline
-  padding: "10px 20px", // Adjust padding as needed
-  cursor: "pointer", // Add a pointer cursor on hover
-};
-export default function Terms() {
-  const navigate = useNavigate();
 
-  const goBackToHome = () => {
-    navigate("/");
-  };
+export default function Terms() {
+
   return (
     <div>
-      <div>
-        <button onClick={goBackToHome} style={buttonStyle}>
-          Home
-        </button>
-        <Outlet />
-      </div>
       <div style={{ color: "white" }}>
         <div
           style={{
