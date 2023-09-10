@@ -77,7 +77,7 @@ function CustomizedSwitches() {
   };
 
   return (
-    <div>
+    <div id="PROG">
       <FormGroup>
         <FormControlLabel
           control={
@@ -89,10 +89,10 @@ function CustomizedSwitches() {
           }
           label=""
         />
-      </FormGroup>
-
-      {/* Render your files here based on switchState */}
+      </FormGroup>{" "}
+      {/* Render your files here based on switchState */}{" "}
       <div>
+        {" "}
         {switchState ? (
           <div>
             <IpProgram />
@@ -101,8 +101,8 @@ function CustomizedSwitches() {
           <div>
             <IProgram />
           </div>
-        )}
-      </div>
+        )}{" "}
+      </div>{" "}
     </div>
   );
 }

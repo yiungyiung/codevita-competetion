@@ -19,7 +19,7 @@ function Navbar() {
     <Paper elevation={3} sx={{ boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.1)" }}>
       <Box sx={{ flexGrow: 1 }}>
         <AppBar
-          position="sticky"
+          position="fixed"
           variant="outlined"
           sx={{ backgroundColor: "#0066A1" }}
         >
@@ -34,13 +34,13 @@ function Navbar() {
                   >
                     HOME
                   </Button>
-                  <Button color="inherit" sx={{ fontSize: "15px" }}>
+                  <Button href="#ABOUT" color="inherit" sx={{ fontSize: "15px" }}>
                     ABOUT US
                   </Button>
-                  <Button color="inherit" sx={{ fontSize: "15px" }}>
+                  <Button href="#PROG" color="inherit" sx={{ fontSize: "15px" }}>
                     PROGRAM
                   </Button>
-                  <Button color="inherit" sx={{ fontSize: "15px" }}>
+                  <Button href="#CONTACT" color="inherit" sx={{ fontSize: "15px" }}>
                     CONTACT
                   </Button>
                 </Stack>
