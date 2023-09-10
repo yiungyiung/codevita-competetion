@@ -49,22 +49,22 @@ function Program() {
   const [VeriCode, setVeriCode] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(Name,Deg,CurrSem,Track,VeriCode,College);
+    console.log(Name, Deg, CurrSem, Track, VeriCode, College);
     db.collection("But")
-    .add({
-      Name: Name,
-      Degree: Deg,
-      College: College,
-      CurrentSem: CurrSem,
-      Track: Track,
-      Verificationcode: VeriCode,
-    })
-    .then(() => {
-      alert("Success!");
-    })
-    .catch((err) => {
-      alert(err.message);
-    });
+      .add({
+        Name: Name,
+        Degree: Deg,
+        College: College,
+        CurrentSem: CurrSem,
+        Track: Track,
+        Verificationcode: VeriCode,
+      })
+      .then(() => {
+        alert("Success!");
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
     setName("");
     setDeg("");
     setCollege("");
@@ -299,11 +299,13 @@ function Program() {
               />
             </Box>
             <Grid
-            item
-            sx={{ display: "flex", alignItems: "center", margin: "1rem" }}
-          >
-            <button onClick={handleSubmit} style={{backgroundColor:"red"}}><Typography variant="h4">submit</Typography></button>
-          </Grid>
+              item
+              sx={{ display: "flex", alignItems: "center", margin: "1rem" }}
+            >
+              <button onClick={handleSubmit} style={{ backgroundColor: "red" }}>
+                <Typography variant="h4">submit</Typography>
+              </button>
+            </Grid>
           </Grid>
         </Grid>
       </div>
