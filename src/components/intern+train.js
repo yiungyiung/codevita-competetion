@@ -91,7 +91,7 @@ function IProgram() {
           </div>
         </div>
       </div>
-      <Box sx={{ display: "flex", width: "100vw", flexDirection: "flex-end" }}>
+      <Box sx={{ display: "flex", width: "100vw", flexDirection: "center" }}>
         <IT
           formname="Cybersecurity Evangelist"
           link="https://www.instamojo.com/@codevitalive/l2308e8fe6a5e4a2d9421d919c97e354a/"
